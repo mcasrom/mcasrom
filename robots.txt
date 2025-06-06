@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap: https://mcasrom.github.io/mcasrom/sitemap.xml
