@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Blogs de MCasRom sobre Emacs, ciberseguridad, inteligencia artificial y geopolítica">
-  <meta name="keywords" content="Emacs, ciberseguridad, inteligencia artificial, geopolítica, geoestrategia">
-  <meta property="og:title" content="Mis Blogs de GitHub">
-  <meta property="og:description" content="Explora mis blogs sobre Emacs, IA, ciberseguridad y geopolítica.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mcasrom.github.io/mcasrom/">
-  <meta property="og:image" content="https://mcasrom.github.io/mcasrom/assets/og-image.jpg">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <link rel="canonical" href="https://mcasrom.github.io/mcasrom/">
-  <link rel="icon" href="/mcasrom/assets/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Blogs de MCasRom sobre Emacs, ciberseguridad, inteligencia artificial y geopolítica" />
+  <meta name="keywords" content="Emacs, ciberseguridad, inteligencia artificial, geopolítica, geoestrategia" />
+  <meta property="og:title" content="Mis Blogs de GitHub" />
+  <meta property="og:description" content="Explora mis blogs sobre Emacs, IA, ciberseguridad y geopolítica." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mcasrom.github.io/mcasrom/" />
+  <meta property="og:image" content="https://mcasrom.github.io/mcasrom/assets/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <link rel="canonical" href="https://mcasrom.github.io/mcasrom/" />
+  <link rel="icon" href="/mcasrom/assets/favicon.ico" type="image/x-icon" />
   <title>Mis Blogs de GitHub</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -59,8 +60,14 @@
       line-height: 1.5;
       color: #555;
     }
+    #goatcounter-visitor-count {
+      margin-top: 40px;
+      font-size: 1.2em;
+      color: #555;
+    }
   </style>
 </head>
+
 <body>
   <h1>Mis Blogs de GitHub</h1>
   <div class="blog-links">
@@ -74,8 +81,24 @@
     </a>
   </div>
 
-  <!-- Contador GoatCounter -->
-  <script data-goatcounter="https://mcasrom.goatcounter.com/count"
-          async src="https://gc.zgo.at/count.js"></script>
+  <div id="goatcounter-visitor-count">Cargando visitas...</div>
+
+  <script>
+    (async function() {
+      const div = document.getElementById('goatcounter-visitor-count');
+      try {
+        const response = await fetch('https://mcasrom.goatcounter.com/api/count');
+        if (!response.ok) throw new Error('Error en la respuesta de GoatCounter');
+        const data = await response.json();
+        div.textContent = `Visitas totales: ${data.count.toLocaleString()}`;
+      } catch (error) {
+        div.textContent = 'No se pudo cargar el contador de visitas.';
+        console.error('GoatCounter API error:', error);
+      }
+    })();
+  </script>
+
+  <!-- Código de tracking de GoatCounter (sin contador visible) -->
+  <script data-goatcounter="https://mcasrom.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
