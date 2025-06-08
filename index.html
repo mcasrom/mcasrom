@@ -62,9 +62,9 @@
     }
     #goatcounter-visitor-count {
       font-weight: bold;
-      font-size: 1.2em;
+      font-size: 1.1em;
       color: #007bff;
-      margin-top: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -81,26 +81,13 @@
     </a>
   </div>
 
-  <div id="goatcounter-visitor-count">Cargando visitas...</div>
+  <div id="goatcounter-visitor-count">
+    <a href="https://mcasrom.goatcounter.com/" target="_blank" rel="noopener">
+      Ver estadísticas de visitas
+    </a>
+  </div>
 
-  <script>
-    fetch('https://mcasrom.goatcounter.com/api/count')
-      .then(response => {
-        if (!response.ok) throw new Error('Respuesta no OK');
-        return response.json();
-      })
-      .then(data => {
-        if (data && typeof data.count === 'number') {
-          document.getElementById('goatcounter-visitor-count').textContent = `Visitas totales: ${data.count}`;
-        } else {
-          throw new Error('Datos no válidos');
-        }
-      })
-      .catch(error => {
-        console.error('Error al cargar contador:', error);
-        document.getElementById('goatcounter-visitor-count').textContent = 'No se pudo cargar el contador de visitas.';
-      });
-  </script>
-
+  <script data-goatcounter="https://mcasrom.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
