@@ -26,10 +26,10 @@
     .blog-link:hover {
       box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
-    #contador {
-      margin-top: 40px;
-      font-size: 1.2em;
-      color: #007bff;
+    footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #666;
     }
   </style>
 </head>
@@ -46,32 +46,11 @@
     <p>Visualización de datos y análisis con IA.</p>
   </a>
 
-  <div id="contador">Cargando visitas...</div>
-
-  <!-- Script GoatCounter: cuenta visitas automáticamente -->
-  <script data-goatcounter="https://8000.goatcounter.com/count"
-          async src="https://gc.zgo.at/count.js"></script>
-
-  <!-- Consulta visitas de la página con ID personalizado -->
-  <script>
-    fetch("https://8000.goatcounter.com/counter/misblogs?json=1")
-      .then(response => {
-        if (!response.ok) throw new Error("Error en la API");
-        return response.json();
-      })
-      .then(data => {
-        if (data && typeof data.count === "number") {
-          document.getElementById("contador").textContent =
-            `Visitas a esta página: ${data.count}`;
-        } else {
-          throw new Error("Datos no válidos");
-        }
-      })
-      .catch(error => {
-        console.error("Error al cargar el contador:", error);
-        document.getElementById("contador").textContent =
-          "No se pudo cargar el contador de visitas.";
-      });
-  </script>
+  <footer>
+    <p>Contador de visitas por GoatCounter:</p>
+    <script data-goatcounter="https://8000.goatcounter.com/count"
+            async src="https://gc.zgo.at/count.js"></script>
+    <noscript><img src="https://8000.goatcounter.com/count?p=/misblogs" alt="contador" /></noscript>
+  </footer>
 </body>
 </html>
