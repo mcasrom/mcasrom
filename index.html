@@ -61,32 +61,51 @@
       color: #555;
     }
     #contador {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #555;
+      margin-top: 30px;
+      font-size: 1em;
+      color: #333;
     }
   </style>
 </head>
 <body>
   <h1>Mis Blogs de GitHub</h1>
+
   <div class="blog-links">
     <a class="blog-link" href="https://mcasrom.github.io/Blogging-con-Emacs-y-AI/index.html">
       <h2>Blogging con Emacs e IA</h2>
       <p>Configuración avanzada de Emacs, automatización y ciberseguridad con inteligencia artificial y flujos de trabajo.</p>
     </a>
+
     <a class="blog-link" href="https://mcasrom.github.io/geo-ia/">
       <h2>Geoestrategia, Geopolítica e IA</h2>
       <p>Análisis geopolítico con herramientas abiertas, mapas, inteligencia artificial y visualización de datos.</p>
     </a>
   </div>
 
+  <!-- Contador de visitas visible -->
   <div id="contador">
     <p>Visitas a esta página:</p>
-    <script data-goatcounter="https://8000.goatcounter.com/count"
-            async src="https://gc.zgo.at/count.js"></script>
+
+    <!-- Default Statcounter code for MyGitHubBlogs -->
+    <script type="text/javascript">
+    var sc_project=13142374; 
+    var sc_invisible=0; 
+    var sc_security="cb02053b"; 
+    var scJsHost = "https://";
+    document.write("<sc"+"ript type='text/javascript' src='" + scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
     <noscript>
-      <img src="https://8000.goatcounter.com/count?p=/mcasrom" alt="contador" />
+      <div class="statcounter">
+        <a title="Web Analytics" href="https://statcounter.com/" target="_blank">
+          <img class="statcounter"
+               src="https://c.statcounter.com/13142374/0/cb02053b/0/"
+               alt="Web Analytics"
+               referrerPolicy="no-referrer-when-downgrade" />
+        </a>
+      </div>
     </noscript>
+    <!-- End of Statcounter Code -->
   </div>
 </body>
 </html>
