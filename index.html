@@ -3,18 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Blogs de MCasRom sobre Emacs, ciberseguridad, inteligencia artificial y geopolítica" />
-  <meta name="keywords" content="Emacs, ciberseguridad, inteligencia artificial, geopolítica, geoestrategia" />
-  <meta property="og:title" content="Mis Blogs de GitHub" />
-  <meta property="og:description" content="Explora mis blogs sobre Emacs, IA, ciberseguridad y geopolítica." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mcasrom.github.io/mcasrom/" />
-  <meta property="og:image" content="https://mcasrom.github.io/mcasrom/assets/og-image.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <link rel="canonical" href="https://mcasrom.github.io/mcasrom/" />
-  <link rel="icon" href="/mcasrom/assets/favicon.ico" type="image/x-icon" />
   <title>Mis Blogs de GitHub</title>
   <style>
     body {
@@ -24,70 +12,66 @@
       background-color: #f4f4f4;
       color: #333;
     }
-    h1 {
-      color: #0056b3;
-      margin-bottom: 30px;
-    }
-    .blog-links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 50px;
-    }
     .blog-link {
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      padding: 25px 35px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
       width: 80%;
       max-width: 500px;
-      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       text-decoration: none;
       color: inherit;
     }
     .blog-link:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
     }
-    .blog-link h2 {
-      margin-top: 0;
-      color: #007bff;
-    }
-    .blog-link p {
-      font-size: 0.95em;
-      line-height: 1.5;
-      color: #555;
-    }
-    #goatcounter-visitor-count {
-      font-weight: bold;
-      font-size: 1.1em;
-      color: #007bff;
+    #contador {
       margin-top: 40px;
+      font-size: 1.2em;
+      color: #007bff;
     }
   </style>
 </head>
 <body>
   <h1>Mis Blogs de GitHub</h1>
-  <div class="blog-links">
-    <a class="blog-link" href="https://mcasrom.github.io/Blogging-con-Emacs-y-AI/index.html">
-      <h2>Blogging con Emacs e IA</h2>
-      <p>Configuración avanzada de Emacs, automatización y ciberseguridad con inteligencia artificial y flujos de trabajo.</p>
-    </a>
-    <a class="blog-link" href="https://mcasrom.github.io/geo-ia/">
-      <h2>Geoestrategia, Geopolítica e IA</h2>
-      <p>Análisis geopolítico con herramientas abiertas, mapas, inteligencia artificial y visualización de datos.</p>
-    </a>
-  </div>
 
-  <div id="goatcounter-visitor-count">
-    <a href="https://mcasrom.goatcounter.com/" target="_blank" rel="noopener">
-      Ver estadísticas de visitas
-    </a>
-  </div>
+  <a class="blog-link" href="https://mcasrom.github.io/Blogging-con-Emacs-y-AI/index.html">
+    <h2>Blogging con Emacs e IA</h2>
+    <p>Automatización, IA, flujos de trabajo y Emacs.</p>
+  </a>
 
-  <script data-goatcounter="https://mcasrom.goatcounter.com/count"
+  <a class="blog-link" href="https://mcasrom.github.io/geo-ia/">
+    <h2>Geopolítica e Inteligencia Artificial</h2>
+    <p>Visualización de datos y análisis con IA.</p>
+  </a>
+
+  <div id="contador">Cargando visitas...</div>
+
+  <!-- Script GoatCounter: cuenta visitas automáticamente -->
+  <script data-goatcounter="https://8000.goatcounter.com/count"
           async src="https://gc.zgo.at/count.js"></script>
+
+  <!-- Consulta visitas de la página con ID personalizado -->
+  <script>
+    fetch("https://8000.goatcounter.com/counter/misblogs?json=1")
+      .then(response => {
+        if (!response.ok) throw new Error("Error en la API");
+        return response.json();
+      })
+      .then(data => {
+        if (data && typeof data.count === "number") {
+          document.getElementById("contador").textContent =
+            `Visitas a esta página: ${data.count}`;
+        } else {
+          throw new Error("Datos no válidos");
+        }
+      })
+      .catch(error => {
+        console.error("Error al cargar el contador:", error);
+        document.getElementById("contador").textContent =
+          "No se pudo cargar el contador de visitas.";
+      });
+  </script>
 </body>
 </html>
