@@ -17,4 +17,4 @@ Proyectos prácticos: Ejemplos de código y soluciones a problemas reales.
 Reflexiones: Opiniones y análisis sobre las tendencias actuales en el ámbito geoespacial y la IA.
 ¡Espero que disfrutes explorando mis contenidos!
 
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/00651768-8c23-4e2a-a13c-aa5caab1baa7/deploy-status)](https://app.netlify.com/projects/elcodigodepoder/deploys)
