@@ -1,0 +1,33 @@
+[build]
+  publish = "."
+
+# Asegurar que robots.txt y sitemap.xml sean servidos correctamente
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+
+# IMPORTANTE: Estos redirects deben ir ANTES que cualquier redirect catch-all
+# Evitar que cualquier redirect interfiera con estos archivos
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+  force = true
+
+# Si tienes un redirect catch-all para SPA, debe ir AL FINAL
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
