@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://mcasrom.github.io/mcasrom/</loc>
-        <lastmod>2025-06-07</lastmod>
-    </url>
-    <url>
-        <loc>https://mcasrom.github.io/Blogging-con-Emacs-y-AI/</loc>
-        <lastmod>2025-06-07</lastmod>
-    </url>
-    <url>
-        <loc>https://mcasrom.github.io/geo-ia/</loc>
-        <lastmod>2025-06-07</lastmod>
-    </url>
+  <!-- Página principal -->
+  <url>
+    <loc>https://elcodigodepoder.netlify.app/</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- enlace al proyecto blogging con emacs y AI -->
+  <url>
+    <loc>https://elcodigodepoder.netlify.app/#blog1</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- enlace al mapa y código -->
+  <url>
+    <loc>https://elcodigodepoder.netlify.app/#blog2</loc>
+    <lastmod>2025-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
